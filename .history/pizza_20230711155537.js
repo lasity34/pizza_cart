@@ -62,9 +62,6 @@ function cart() {
     show: false,
     toggleModal() {
       this.show = !this.show;
-      if (this.show) {
-        setTimeout(() => { this.show = false; }, 2000); // Close after 3 seconds
-      }
     },
     
   };
