@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pizza Cart</title>
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.1.2/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link href="./style.css" rel="stylesheet" />
+  </head>
+  <body class="bg-blue-300">
+    <section class="flex justify-center items-center">
+      <h1 class="text-4xl pt-4 font-bold">Pizza Cart</h1>
+    </section>
+    <section
+      class="shop-container my-5 p-7 flex justify-center items-center flex-col"
+    >
+      <h2 class="text-2xl mb-2 font-bold">Shopping Cart</h2>
+      <div class="mt-6 flex flex-col items-center">
+        <div x-data="cart" class="flex items-center">
+          <p class="font-bold mr-2">Small</p>
+          <button @click="increment()"
+            class="bg-gray-300 hover:bg-gray-400 rounded-lg px-3 py-1 mr-2 font-bold"
+          >
+            +
+          </button>
+          <button @click="decrement()"
+            class="bg-gray-300 hover:bg-gray-400 rounded-lg px-3 py-1 font-bold"
+          >
+            -
+          </button>
+          <p class="ml-2" x-text="amount * price"></p>
+        </div>
+        <div class="flex mt-4">
+          <p class="font-bold">Total Cost</p>
+          <p class="ml-5 font-bold">178.97</p>
+        </div>
+        <div class="mt-4">
+          <p class="text-red-600 font-bold">Message goes here</p>
+        </div>
+        <div class="mt-4">
+          <label class="font-bold">Payment Amount:</label>
+          <input type="text" class="rounded ml-2 py-2" />
+        </div>
+        <div class="mt-6">
+          <button
+            class="bg-gray-300 hover:bg-gray-400 py-2 px-8 rounded font-bold"
+          >
+            Pay
+          </button>
+        </div>
+      </div>
+    </section>
+    <section class="pizza_columns">
+      <div class="flex justify-around gap-4 max-w-screen-sm mx-auto">
+        <div
+          class="pizza_sm bg-blue-500 rounded p-4 w-64 flex flex-col justify-between text-black"
+        >
+          <div>
+            <img src="./pizza.png" width="50" />
+            <h3 class="mb-2 font-bold">Small Pizza</h3>
+            <h3 class="mb-2 font-bold">R27.99</h3>
+            <p class="mb-4">
+              A petite treat, this pizza packs a punch. Tangy pepperoni, earthy
+              mushrooms, and melted mozzarella on our homemade dough. 8" of
+              perfection.
+            </p>
+          </div>
+          <button
+            class="bg-gray-300 hover:bg-gray-400 transition-colors duration-300 py-2 px-4 rounded font-bold"
+          >
+            Buy
+          </button>
+        </div>
+        <div
+          class="pizza_md bg-green-500 rounded p-4 w-64 flex flex-col justify-between text-black"
+        >
+          <div>
+            <img src="./pizza.png" width="70" />
+            <h3 class="mb-2 font-bold">Medium Pizza</h3>
+            <h3 class="mb-2 font-bold">R57.99</h3>
+            <p class="mb-4">
+              Enjoy more with our 12" pizza. Savory pepperoni, sautéed
+              mushrooms, and gooey mozzarella atop our golden-brown, hand-tossed
+              dough.
+            </p>
+          </div>
+          <button
+            class="bg-gray-300 hover:bg-gray-400 transition-colors duration-300 py-2 px-4 rounded font-bold"
+          >
+            Buy
+          </button>
+        </div>
+        <div
+          class="pizza_lg bg-red-500 rounded p-4 w-64 flex flex-col justify-between text-black"
+        >
+          <div>
+            <img src="./pizza.png" width="100" />
+            <h3 class="mb-2 font-bold">Large Pizza</h3>
+            <h3 class="mb-2 font-bold">R87.99</h3>
+            <p class="mb-4">
+              Go big with our 16" pizza. Layered with spicy pepperoni, juicy
+              mushrooms, and bubbling mozzarella. Perfect for sharing or
+              satisfying the largest of appetites.
+            </p>
+          </div>
+          <button
+            class="bg-gray-300 hover:bg-gray-400 transition-colors duration-300 py-2 px-4 rounded font-bold"
+          >
+            Buy
+          </button>
+        </div>
+      </div>
+      <footer class="bg-yellow-400 text-black mt-10 p-10">
+        <div class="container mx-auto flex justify-between">
+          <div>
+            <h2 class="text-2xl mb-4">Our Location</h2>
+            <p class="mb-2">123 Pizza Street, Cape Town, South Africa, 8000</p>
+
+            <h2 class="text-2xl mb-4">Opening Hours</h2>
+            <p class="mb-2">Monday - Friday: 11:00 AM - 10:00 PM</p>
+            <p class="mb-2">Saturday & Sunday: 11:00 AM - 11:00 PM</p>
+          </div>
+          <div>
+            <h2 class="text-2xl mb-4">Contact Us</h2>
+            <p class="mb-2">Email: info@pizzaplace.com</p>
+            <p class="mb-2">Phone: +27 21 123 4567</p>
+          </div>
+        </div>
+      </footer>
+    </section>
+    <script src="./pizza.js"></script>
+  </body>
+</html>

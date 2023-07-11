@@ -1,0 +1,9 @@
+
+body {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.shop-container {
+    background-color: rgb(205, 190, 50);
+}
