@@ -65,7 +65,7 @@ function cart() {
         setTimeout(() => {
           this.payMessage = "";
         }, 2000);
-      } else if (this.paymentAmount == this.total() && this.total() !== 0) {
+      } else {
         this.payMessage = "Enjoy your pizzas";
         setTimeout(() => {
           this.payMessage = "";

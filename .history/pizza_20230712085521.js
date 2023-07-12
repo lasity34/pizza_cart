@@ -30,7 +30,7 @@ function cart() {
         this.lastMessageAdded = 'Large Pizza'
       }
       this.show = true
-      this.message = this.lastMessageAdded + ' has been added'
+      this.message = this.lastMessageAdded + 'has been added'
     },
     decrement(size) {
       if(size === 'small' && this.smallAmount > 0 && this.smallAdded) {
@@ -65,7 +65,7 @@ function cart() {
         setTimeout(() => {
           this.payMessage = "";
         }, 2000);
-      } else if (this.paymentAmount == this.total() && this.total() !== 0) {
+      } else {
         this.payMessage = "Enjoy your pizzas";
         setTimeout(() => {
           this.payMessage = "";

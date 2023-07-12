@@ -9,7 +9,6 @@ function cart() {
     smallAdded: false,
     mediumAdded: false,
     largeAdded: false,
-    show: false,
     prices: {
       small: 27.99,
       medium: 57.99,
@@ -17,20 +16,9 @@ function cart() {
     },
     lastMessageAdded: '',
     increment(size) {
-      if (size === "small" && this.smallAdded) {
-        this.smallAmount++
-        this.lastMessageAdded = 'Small Pizza'
-      }
-      else if (size === "medium" && this.mediumAdded) {
-        this.mediumAmount++;
-        this.lastMessageAdded = 'Medium Pizza'
-      }
-      else if (size === "large" && this.largeAdded) {
-        this.largeAmount++;
-        this.lastMessageAdded = 'Large Pizza'
-      }
-      this.show = true
-      this.message = this.lastMessageAdded + ' has been added'
+      if (size === "small" && this.smallAdded) this.smallAmount++;
+      else if (size === "medium" && this.mediumAdded) this.mediumAmount++;
+      else if (size === "large" && this.largeAdded) this.largeAmount++;
     },
     decrement(size) {
       if(size === 'small' && this.smallAmount > 0 && this.smallAdded) {
@@ -56,23 +44,23 @@ function cart() {
     },
     paymentTotal() {
       if (this.paymentAmount < this.total()) {
-        this.payMessage = `R${(this.total() - this.paymentAmount).toFixed(2)} is needed`;
+        this.message = `R${(this.total() - this.paymentAmount).toFixed(2)} is needed`;
         setTimeout(() => {
-          this.payMessage = "";
+          this.message = "";
         }, 2000);
       } else if (this.paymentAmount > this.total()) {
-        this.payMessage = `There is R${(this.paymentAmount - this.total()).toFixed(2)} too much`;
+        this.message = `There is R${(this.paymentAmount - this.total()).toFixed(2)} too much`;
         setTimeout(() => {
-          this.payMessage = "";
+          this.message = "";
         }, 2000);
-      } else if (this.paymentAmount == this.total() && this.total() !== 0) {
-        this.payMessage = "Enjoy your pizzas";
+      } else {
+        this.message = "Enjoy your pizzas";
         setTimeout(() => {
-          this.payMessage = "";
+          this.message = "";
         }, 2000);
       }
     },
-    
+    show: false,
     toggleModal() {
       this.show = !this.show;
       if (this.show) {

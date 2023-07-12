@@ -29,8 +29,6 @@ function cart() {
         this.largeAmount++;
         this.lastMessageAdded = 'Large Pizza'
       }
-      this.show = true
-      this.message = this.lastMessageAdded + ' has been added'
     },
     decrement(size) {
       if(size === 'small' && this.smallAmount > 0 && this.smallAdded) {
@@ -56,19 +54,19 @@ function cart() {
     },
     paymentTotal() {
       if (this.paymentAmount < this.total()) {
-        this.payMessage = `R${(this.total() - this.paymentAmount).toFixed(2)} is needed`;
+        this.message = `R${(this.total() - this.paymentAmount).toFixed(2)} is needed`;
         setTimeout(() => {
-          this.payMessage = "";
+          this.message = "";
         }, 2000);
       } else if (this.paymentAmount > this.total()) {
-        this.payMessage = `There is R${(this.paymentAmount - this.total()).toFixed(2)} too much`;
+        this.message = `There is R${(this.paymentAmount - this.total()).toFixed(2)} too much`;
         setTimeout(() => {
-          this.payMessage = "";
+          this.message = "";
         }, 2000);
-      } else if (this.paymentAmount == this.total() && this.total() !== 0) {
-        this.payMessage = "Enjoy your pizzas";
+      } else {
+        this.message = "Enjoy your pizzas";
         setTimeout(() => {
-          this.payMessage = "";
+          this.message = "";
         }, 2000);
       }
     },
