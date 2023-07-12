@@ -64,7 +64,7 @@ function cart() {
     },
     paymentTotal() {
       if (this.paymentAmount < this.total()) {
-        this.payMessage = `<p class='flex bg-red-600 text-white py-2 px-4 font-bold text-lg my-3 py-1'>R${(this.total() - this.paymentAmount).toFixed(2)} is needed</p>`;
+        this.payMessage = `R${(this.total() - this.paymentAmount).toFixed(2)} is needed`;
         setTimeout(() => {
           this.payMessage = "";
         }, 2000);

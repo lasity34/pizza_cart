@@ -41,7 +41,7 @@
                 -
               </button>
             </div>
-            <p class="ml-4 text-xs sm:text-sm md:text-lg lg:text-2xl">
+            <p class="ml-4 text-2xl">
               R<span x-text="(smallAmount * prices.small).toFixed(2)"
                 >0.00</span
               >
@@ -61,7 +61,7 @@
             >
               -
             </button>
-            <p class="ml-4 text-xs sm:text-sm md:text-lg lg:text-2xl">
+            <p class="ml-4 text-2xl">
               R<span x-text="(mediumAmount * prices.medium).toFixed(2)"
                 >0.00</span
               >
@@ -83,7 +83,7 @@
                 -
               </button>
             </div>
-            <p class="ml-4 text-xs sm:text-sm md:text-lg lg:text-2xl">
+            <p class="ml-4 text-2xl">
               R<span x-text="(largeAmount * prices.large).toFixed(2)"
                 >0.00</span
               >
@@ -115,9 +115,11 @@
     </section>
 
     <section class="pizza_columns">
-      <div class="flex flex-col gap-4 mx-auto items-center lg:items-stretch lg:flex-row justify-center">
-        <div class="flex bg-blue-500 rounded p-4 w-4/5 lg:w-4/5 flex-grow flex-shrink flex flex-col justify-between text-black items-center">
-          <div class="flex-grow flex flex-col items-center justify-center">
+      <div class="flex justify-around gap-4 max-w-screen-sm mx-auto">
+        <div
+          class="pizza_sm bg-blue-500 rounded p-4 w-64 flex flex-col justify-between text-black"
+        >
+          <div>
             <img src="./pizza.png" width="50" />
             <h3 class="mb-2 font-bold">Small Pizza</h3>
             <h3 class="mb-2 font-bold">R27.99</h3>
@@ -128,15 +130,17 @@
             </p>
           </div>
           <button
-              @click="buy('small')"
-              :disabled="smallAdded"
-              class="bg-gray-300 hover:bg-gray-400 transition-colors duration-300 py-2 px-4 rounded font-bold"
-            >
-              Buy
-          </button>
+          @click="buy('small')"
+          :disabled="smallAdded"
+          class="bg-gray-300 hover:bg-gray-400 transition-colors duration-300 py-2 px-4 rounded font-bold"
+        >
+          Buy
+        </button>
         </div>
-        <div class="pizza_md bg-green-500 rounded p-4 w-4/5 lg:w-4/5 flex-grow flex-shrink flex flex-col justify-between text-black items-center">
-          <div class="flex-grow flex flex-col items-center justify-center">
+        <div
+          class="pizza_md bg-green-500 rounded p-4 w-64 flex flex-col justify-between text-black"
+        >
+          <div>
             <img src="./pizza.png" width="70" />
             <h3 class="mb-2 font-bold">Medium Pizza</h3>
             <h3 class="mb-2 font-bold">R57.99</h3>
@@ -147,15 +151,17 @@
             </p>
           </div>
           <button
-              @click="buy('medium')"
-              :disabled="mediumAdded"
-              class="bg-gray-300 hover:bg-gray-400 transition-colors duration-300 py-2 px-4 rounded font-bold"
-            >
-              Buy
-          </button>
+          @click="buy('medium')"
+          :disabled="mediumAdded"
+          class="bg-gray-300 hover:bg-gray-400 transition-colors duration-300 py-2 px-4 rounded font-bold"
+        >
+          Buy
+        </button>
         </div>
-        <div class="pizza_lg bg-red-500 rounded p-4 w-4/5 lg:w-4/5 flex-grow flex-shrink flex flex-col justify-between text-black items-center">
-          <div class="flex-grow flex flex-col items-center justify-center">
+        <div
+          class="pizza_lg bg-red-500 rounded p-4 w-64 flex flex-col justify-between text-black"
+        >
+          <div>
             <img src="./pizza.png" width="100" />
             <h3 class="mb-2 font-bold">Large Pizza</h3>
             <h3 class="mb-2 font-bold">R87.99</h3>
@@ -166,18 +172,14 @@
             </p>
           </div>
           <button
-              @click="buy('large')"
-              :disabled="largeAdded"
-              class="bg-gray-300 hover:bg-gray-400 transition-colors duration-300 py-2 px-4 rounded font-bold"
-            >
-              Buy
-          </button>
+          @click="buy('large')"
+          :disabled="largeAdded"
+          class="bg-gray-300 hover:bg-gray-400 transition-colors duration-300 py-2 px-4 rounded font-bold"
+        >
+          Buy
+        </button>
         </div>
       </div>
-
-
-
-      
 
       <footer class="bg-yellow-400 text-black mt-10 p-10">
         <div class="container mx-auto flex justify-between">
