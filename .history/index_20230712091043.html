@@ -127,7 +127,7 @@
             </p>
           </div>
           <button
-          @click="buy('small')"
+          @click="buy('small'); smallAdded = true; smallAdded ? toggleModal() : null; increment('small'); (smallAmount * prices.small).toFixed(2);"
           :disabled="smallAdded"
           class="bg-gray-300 hover:bg-gray-400 transition-colors duration-300 py-2 px-4 rounded font-bold"
         >
@@ -148,7 +148,7 @@
             </p>
           </div>
           <button
-          @click="buy('medium')"
+          @click="buy('medium');mediumAdded = true; mediumAdded ? toggleModal() : null; increment('medium'); (mediumAmount * prices.medium).toFixed(2);"
           :disabled="mediumAdded"
           class="bg-gray-300 hover:bg-gray-400 transition-colors duration-300 py-2 px-4 rounded font-bold"
         >
@@ -169,7 +169,7 @@
             </p>
           </div>
           <button
-          @click="buy('large')"
+          @click="buy('large');largeAdded = true; largeAdded ? toggleModal() : null; increment('large'); (largeAmount * prices.large).toFixed(2);"
           :disabled="largeAdded"
           class="bg-gray-300 hover:bg-gray-400 transition-colors duration-300 py-2 px-4 rounded font-bold"
         >

@@ -17,30 +17,30 @@ function cart() {
     },
     lastMessageAdded: '',
     increment(size) {
-      if (size === "small" && this.smallAdded) {
+      if (size === "small") {
         this.smallAmount++;
-      } else if (size === "medium" && this.mediumAdded) {
+      } else if (size === "medium") {
         this.mediumAmount++;
-      } else if (size === "large" && this.largeAdded) {
+      } else if (size === "large") {
         this.largeAmount++;
       }
     },
+    
     buy(size) {
       if (size === "small") {
         this.smallAdded = true;
-        this.smallAmount++;  // increment the small pizza count
         this.message = 'Small Pizza has been added';
       } else if (size === "medium") {
         this.mediumAdded = true;
-        this.mediumAmount++;  // increment the medium pizza count
         this.message = 'Medium Pizza has been added';
       } else if (size === "large") {
         this.largeAdded = true;
-        this.largeAmount++;  // increment the large pizza count
         this.message = 'Large Pizza has been added';
       }
+      this.show = true;
       this.toggleModal();
     },
+    
     decrement(size) {
       if(size === 'small' && this.smallAmount > 0 && this.smallAdded) {
         this.smallAmount--;
@@ -55,6 +55,7 @@ function cart() {
         if(this.largeAmount === 0) this.largeAdded = false;
       }
     },
+    
     total() {
       return (
         this.smallAmount * this.prices.small +
@@ -80,12 +81,14 @@ function cart() {
         }, 2000);
       }
     },
+    
     toggleModal() {
       this.show = !this.show;
       if (this.show) {
-        setTimeout(() => { this.show = false; }, 2000); // Close after 2 seconds
+        setTimeout(() => { this.show = false; }, 2000); // Close after 3 seconds
       }
     },
+    
   };
 }
 
