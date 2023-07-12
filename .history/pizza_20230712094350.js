@@ -93,7 +93,7 @@ function cart() {
       this.largeAmount = 0;
       this.paymentAmount = 0;
       this.message = "";
-   
+      this.payMessage = "";
       this.smallAdded = false;
       this.mediumAdded = false;
       this.largeAdded = false;

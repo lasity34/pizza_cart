@@ -75,7 +75,8 @@ function cart() {
         }, 2000);
       } else if (this.paymentAmount == this.total() && this.total() !== 0) {
         this.payMessage = "Enjoy your pizzas";
-        this.reset();
+        this.total() = 0;
+        this.smallAmount = 0;
         setTimeout(() => {
           this.payMessage = "";
         }, 2000);
@@ -87,18 +88,6 @@ function cart() {
         setTimeout(() => { this.show = false; }, 2000); // Close after 2 seconds
       }
     },
-    reset() {
-      this.smallAmount = 0;
-      this.mediumAmount = 0;
-      this.largeAmount = 0;
-      this.paymentAmount = 0;
-      this.message = "";
-   
-      this.smallAdded = false;
-      this.mediumAdded = false;
-      this.largeAdded = false;
-      this.show = false;
-    }
   };
 }
 
